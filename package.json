@@ -10,6 +10,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "clsx": "^2.1.1",
     "docx": "^9.6.0",
     "lucide-react": "^0.577.0",

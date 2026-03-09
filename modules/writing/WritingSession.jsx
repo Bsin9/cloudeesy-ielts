@@ -7,7 +7,7 @@ import { WritingPromptCard }from "@/components/writing/WritingPromptCard.jsx";
 import { WritingEditor }    from "@/components/writing/WritingEditor.jsx";
 import { WordCounter }      from "@/components/writing/WordCounter.jsx";
 import { SampleAnswerPanel }from "@/components/writing/SampleAnswerPanel.jsx";
-import { FeedbackPlaceholder } from "@/components/writing/FeedbackPlaceholder.jsx";
+import { AIFeedback }       from "@/components/writing/AIFeedback.jsx";
 import { SessionResults }   from "@/components/session/SessionResults.jsx";
 import { TimerDisplay }     from "@/components/ui/Timer.jsx";
 import { ProgressBar }      from "@/components/ui/ProgressBar.jsx";
@@ -19,10 +19,15 @@ import { Badge }            from "@/components/ui/Badge.jsx";
  */
 export function WritingSession({ session }) {
   const taskType = session.taskType ?? "task2";
-  const [text,      setText]      = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [result,    setResult]    = useState(null);
-  const [showSample, setShowSample] = useState(false);
+  const [text,        setText]        = useState("");
+  const [submitted,   setSubmitted]   = useState(false);
+  const [result,      setResult]      = useState(null);
+  const [showSample,  setShowSample]  = useState(false);
+
+  // AI evaluation state
+  const [aiLoading,   setAiLoading]   = useState(false);
+  const [aiResult,    setAiResult]    = useState(null);
+  const [aiError,     setAiError]     = useState(null);
 
   const wordCount = useWordCount(text, taskType);
 
@@ -36,64 +41,105 @@ export function WritingSession({ session }) {
     autoStart: true,
   });
 
-  function handleSubmit() {
+  async function handleSubmit() {
+    // 1. Basic rule-based assessment (instant)
     const assessment = assessWriting({ text, taskType });
     setResult(assessment);
     setSubmitted(true);
     timer.pause();
+
+    // 2. AI evaluation (async — shows loading spinner while waiting)
+    setAiLoading(true);
+    setAiError(null);
+    try {
+      const res = await fetch("/api/ai/evaluate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text,
+          taskType,
+          prompt: session.prompt?.prompt ?? session.prompt?.title ?? "",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.evaluation) {
+        throw new Error(data.error ?? "Evaluation failed");
+      }
+      setAiResult(data.evaluation);
+    } catch (err) {
+      setAiError(err.message ?? "Could not reach AI professor. Please try again.");
+    } finally {
+      setAiLoading(false);
+    }
   }
 
   if (submitted && result) {
     const band = result.pass ? "6.0–7.0" : "4.0–5.5";
     return (
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "1.5rem" }}>
-        <SessionResults
-          correct={result.pass ? 1 : 0}
-          total={1}
-          band={band}
-          module="writing"
-        />
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "1.5rem",
+        display: "grid", gridTemplateColumns: "1fr 340px", gap: "1.5rem",
+        alignItems: "start" }}>
 
-        {/* Word count summary */}
-        <div className="card" style={{ padding: "1.25rem", marginBottom: "1rem" }}>
-          <p style={{ fontWeight: 700, color: "var(--color-brand-navy)", marginBottom: "0.75rem" }}>
-            Submission Summary
-          </p>
-          <p style={{ fontSize: "0.875rem", color: "var(--color-brand-gray)", marginBottom: "0.5rem" }}>
-            Word count: <strong style={{ color: "var(--color-brand-navy)" }}>{result.wordCount}</strong>
-          </p>
-          {result.feedback.length > 0 && (
-            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {result.feedback.map((fb, i) => (
-                <li key={i} style={{ fontSize: "0.875rem", color: "var(--color-brand-navy)",
-                  background: "var(--color-brand-gray-light)", padding: "0.625rem 0.875rem",
-                  borderRadius: "var(--radius-sm)" }}>
-                  {fb}
-                </li>
-              ))}
-            </ul>
+        {/* Left column — basic results + response */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <SessionResults
+            correct={result.pass ? 1 : 0}
+            total={1}
+            band={band}
+            module="writing"
+          />
+
+          {/* Word count summary */}
+          <div className="card" style={{ padding: "1.25rem" }}>
+            <p style={{ fontWeight: 700, color: "var(--color-brand-navy)", marginBottom: "0.75rem" }}>
+              Submission Summary
+            </p>
+            <p style={{ fontSize: "0.875rem", color: "var(--color-brand-gray)", marginBottom: "0.5rem" }}>
+              Word count: <strong style={{ color: "var(--color-brand-navy)" }}>{result.wordCount}</strong>
+            </p>
+            {result.feedback.length > 0 && (
+              <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {result.feedback.map((fb, i) => (
+                  <li key={i} style={{ fontSize: "0.875rem", color: "var(--color-brand-navy)",
+                    background: "var(--color-brand-gray-light)", padding: "0.625rem 0.875rem",
+                    borderRadius: "var(--radius-sm)" }}>
+                    {fb}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Your response */}
+          <div className="card" style={{ padding: "1.25rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }}>
+              <p style={{ fontWeight: 700, color: "var(--color-brand-navy)" }}>Your Response</p>
+              <button className="btn-secondary"
+                style={{ fontSize: "0.75rem", padding: "0.375rem 0.75rem" }}
+                onClick={() => setShowSample((v) => !v)}>
+                {showSample ? "Hide" : "Show"} Sample Answer
+              </button>
+            </div>
+            <p style={{ whiteSpace: "pre-wrap", lineHeight: 1.7, fontSize: "0.875rem",
+              color: "var(--color-brand-navy)" }}>
+              {text || <em style={{ color: "var(--color-brand-gray)" }}>No response submitted.</em>}
+            </p>
+          </div>
+
+          {showSample && session.prompt?.sampleAnswer && (
+            <SampleAnswerPanel answer={session.prompt.sampleAnswer} />
           )}
         </div>
 
-        {/* Your response */}
-        <div className="card" style={{ padding: "1.25rem", marginBottom: "1rem" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }}>
-            <p style={{ fontWeight: 700, color: "var(--color-brand-navy)" }}>Your Response</p>
-            <button className="btn-secondary"
-              style={{ fontSize: "0.75rem", padding: "0.375rem 0.75rem" }}
-              onClick={() => setShowSample((v) => !v)}>
-              {showSample ? "Hide" : "Show"} Sample Answer
-            </button>
-          </div>
-          <p style={{ whiteSpace: "pre-wrap", lineHeight: 1.7, fontSize: "0.875rem",
-            color: "var(--color-brand-navy)" }}>
-            {text || <em style={{ color: "var(--color-brand-gray)" }}>No response submitted.</em>}
-          </p>
+        {/* Right column — AI Professor feedback */}
+        <div>
+          <AIFeedback
+            evaluation={aiResult}
+            loading={aiLoading}
+            error={aiError}
+            taskType={taskType}
+          />
         </div>
-
-        {showSample && session.prompt?.sampleAnswer && (
-          <SampleAnswerPanel answer={session.prompt.sampleAnswer} />
-        )}
       </div>
     );
   }
@@ -117,7 +163,7 @@ export function WritingSession({ session }) {
         </div>
       </div>
 
-      {/* Right — timer + word count + submit */}
+      {/* Right — timer + word count + submit + AI preview */}
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* Timer */}
         <div className="card" style={{ padding: "1rem" }}>
@@ -168,8 +214,13 @@ export function WritingSession({ session }) {
           Submit Essay ✓
         </button>
 
-        {/* AI feedback placeholder */}
-        <FeedbackPlaceholder />
+        {/* AI Professor preview — shown before submit */}
+        <AIFeedback
+          evaluation={null}
+          loading={false}
+          error={null}
+          taskType={taskType}
+        />
       </div>
     </div>
   );
