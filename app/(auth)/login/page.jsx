@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ROUTES } from "@/config/routes.js";
 
-export default function LoginPage() {
+// Inner form component — needs Suspense because of useSearchParams
+function LoginForm() {
   const router       = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl  = searchParams.get("callbackUrl") || ROUTES.DASHBOARD;
@@ -40,6 +41,58 @@ export default function LoginPage() {
   }
 
   return (
+    <>
+      {error && (
+        <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: "0.5rem",
+          padding: "0.75rem 1rem", marginBottom: "1rem", fontSize: "0.875rem", color: "#DC2626" }}>
+          {error}
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div>
+          <label htmlFor="email" style={{ display: "block", fontWeight: 600, fontSize: "0.875rem",
+            color: "var(--color-brand-navy)", marginBottom: "0.375rem" }}>Email</label>
+          <input id="email" name="email" type="email" className="input-field"
+            value={email} onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com" autoComplete="email" required />
+        </div>
+
+        <div>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.375rem" }}>
+            <label htmlFor="password" style={{ fontWeight: 600, fontSize: "0.875rem",
+              color: "var(--color-brand-navy)" }}>Password</label>
+            <Link href={ROUTES.FORGOT_PASSWORD}
+              style={{ fontSize: "0.75rem", color: "var(--color-brand-teal)", textDecoration: "none" }}>
+              Forgot password?
+            </Link>
+          </div>
+          <div style={{ position: "relative" }}>
+            <input id="password" name="password" type={showPw ? "text" : "password"} className="input-field"
+              value={password} onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••" autoComplete="current-password" required
+              style={{ paddingRight: "2.5rem", width: "100%", boxSizing: "border-box" }} />
+            <button type="button" onClick={() => setShowPw(!showPw)}
+              style={{ position: "absolute", right: "0.75rem", top: "50%", transform: "translateY(-50%)",
+                background: "none", border: "none", cursor: "pointer", fontSize: "0.9rem",
+                color: "var(--color-brand-gray)", padding: 0 }}>
+              {showPw ? "🙈" : "👁"}
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" className="btn-primary" disabled={loading}
+          style={{ width: "100%", justifyContent: "center", marginTop: "0.5rem",
+            opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}>
+          {loading ? "Signing in…" : "Sign In →"}
+        </button>
+      </form>
+    </>
+  );
+}
+
+export default function LoginPage() {
+  return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
       background: "linear-gradient(180deg, var(--color-brand-teal-pale) 0%, #fff 100%)", padding: "1.5rem" }}>
       <div className="card" style={{ width: "100%", maxWidth: "400px", padding: "2.5rem" }}>
@@ -53,51 +106,10 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {error && (
-          <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: "0.5rem",
-            padding: "0.75rem 1rem", marginBottom: "1rem", fontSize: "0.875rem", color: "#DC2626" }}>
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <div>
-            <label htmlFor="email" style={{ display: "block", fontWeight: 600, fontSize: "0.875rem",
-              color: "var(--color-brand-navy)", marginBottom: "0.375rem" }}>Email</label>
-            <input id="email" name="email" type="email" className="input-field"
-              value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com" autoComplete="email" required />
-          </div>
-
-          <div>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.375rem" }}>
-              <label htmlFor="password" style={{ fontWeight: 600, fontSize: "0.875rem",
-                color: "var(--color-brand-navy)" }}>Password</label>
-              <Link href={ROUTES.FORGOT_PASSWORD}
-                style={{ fontSize: "0.75rem", color: "var(--color-brand-teal)", textDecoration: "none" }}>
-                Forgot password?
-              </Link>
-            </div>
-            <div style={{ position: "relative" }}>
-              <input id="password" name="password" type={showPw ? "text" : "password"} className="input-field"
-                value={password} onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••" autoComplete="current-password" required
-                style={{ paddingRight: "2.5rem", width: "100%", boxSizing: "border-box" }} />
-              <button type="button" onClick={() => setShowPw(!showPw)}
-                style={{ position: "absolute", right: "0.75rem", top: "50%", transform: "translateY(-50%)",
-                  background: "none", border: "none", cursor: "pointer", fontSize: "0.9rem",
-                  color: "var(--color-brand-gray)", padding: 0 }}>
-                {showPw ? "🙈" : "👁"}
-              </button>
-            </div>
-          </div>
-
-          <button type="submit" className="btn-primary" disabled={loading}
-            style={{ width: "100%", justifyContent: "center", marginTop: "0.5rem",
-              opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}>
-            {loading ? "Signing in…" : "Sign In →"}
-          </button>
-        </form>
+        {/* Suspense required because LoginForm uses useSearchParams */}
+        <Suspense fallback={<div style={{ textAlign: "center", color: "var(--color-brand-gray)" }}>Loading…</div>}>
+          <LoginForm />
+        </Suspense>
 
         <p style={{ textAlign: "center", marginTop: "1.5rem", fontSize: "0.875rem",
           color: "var(--color-brand-gray)" }}>
