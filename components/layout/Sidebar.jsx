@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, BookOpen, PenLine, Headphones, Mic,
-  BarChart2, User, FileText, Zap, LogOut, GraduationCap,
+  BarChart2, User, FileText, Zap, LogOut,
   Library,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
@@ -11,7 +11,6 @@ import { ROUTES } from "@/config/routes.js";
 
 const NAV_ITEMS = [
   { href: ROUTES.DASHBOARD,          label: "Dashboard",  Icon: LayoutDashboard },
-  { href: ROUTES.MY_COURSES,         label: "My Courses", Icon: GraduationCap   },
   { href: ROUTES.PRACTICE.READING,   label: "Reading",    Icon: BookOpen        },
   { href: ROUTES.PRACTICE.WRITING,   label: "Writing",    Icon: PenLine         },
   { href: ROUTES.PRACTICE.LISTENING, label: "Listening",  Icon: Headphones      },

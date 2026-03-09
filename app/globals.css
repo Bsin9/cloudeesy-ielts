@@ -266,6 +266,7 @@ a { transition: color 0.2s; }
   font-weight: 800;
   margin: 0 0 0.5rem;
   line-height: 1.2;
+  color: #fff;
 }
 .lhub-hero-sub {
   font-size: 0.9rem;
@@ -303,8 +304,8 @@ a { transition: color 0.2s; }
 }
 .lhub-section-title {
   font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-brand-navy);
+  font-weight: 700 !important;
+  color: var(--color-brand-navy) !important;
   margin: 0;
 }
 .lhub-section-count {
