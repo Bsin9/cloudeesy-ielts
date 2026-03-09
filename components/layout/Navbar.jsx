@@ -35,7 +35,7 @@ export function Navbar() {
         display: "flex", alignItems: "center", justifyContent: "space-between", height: "4rem",
       }}>
         {/* Logo */}
-        <Link href="/" aria-label="Cloudeesy IELTS — Home"
+        <Link href="/" aria-label="RiseIQ IELTS — Home"
           style={{ display: "flex", alignItems: "center", gap: "0.625rem", textDecoration: "none" }}>
           <div style={{
             width: "2rem", height: "2rem", borderRadius: "0.5rem",
@@ -48,7 +48,7 @@ export function Navbar() {
             fontWeight: 800, fontSize: "1.125rem",
             color: isLanding ? "#fff" : "var(--color-brand-navy)",
           }}>
-            Cloudeesy <span style={{ color: "var(--color-brand-teal)" }}>IELTS</span>
+            RiseIQ <span style={{ color: "var(--color-brand-teal)" }}>IELTS</span>
           </span>
         </Link>
 

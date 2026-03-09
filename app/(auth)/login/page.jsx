@@ -59,7 +59,7 @@ export default function LoginPage() {
         <p style={{ textAlign: "center", marginTop: "0.75rem", fontSize: "0.75rem",
           color: "var(--color-brand-gray)", background: "var(--color-brand-gray-light)",
           padding: "0.5rem 0.875rem", borderRadius: "0.5rem" }}>
-          Demo: demo@cloudeesy.com / demo1234
+          Demo: demo@riseiq.ca / demo1234
         </p>
       </div>
     </div>

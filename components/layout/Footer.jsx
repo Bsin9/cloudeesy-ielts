@@ -8,10 +8,10 @@ export function Footer() {
         flexWrap: "wrap", gap: "1rem" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <span style={{ fontSize: "1.25rem" }}>⚡</span>
-          <span style={{ fontWeight: 800, color: "var(--color-brand-navy)" }}>Cloudeesy IELTS</span>
+          <span style={{ fontWeight: 800, color: "var(--color-brand-navy)" }}>RiseIQ IELTS</span>
         </div>
         <p style={{ fontSize: "0.8rem", color: "var(--color-brand-gray)" }}>
-          © {new Date().getFullYear()} Cloudeesy. All rights reserved.
+          © {new Date().getFullYear()} RiseIQ. All rights reserved.
         </p>
         <nav aria-label="Footer links" style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacy", "Terms", "Contact"].map((item) => (

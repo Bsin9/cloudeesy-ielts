@@ -5,7 +5,7 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "**.cloudeesy.com" },
+      { protocol: "https", hostname: "**.riseiq.ca" },
     ],
   },
   async headers() {

@@ -12,7 +12,7 @@ export function BenefitsSection() {
     <section style={{ padding: "4rem 1.5rem", background: "var(--color-brand-navy)" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", fontSize: "1.75rem", fontWeight: 800, color: "#fff",
-          marginBottom: "2.5rem" }}>Why Students Choose Cloudeesy</h2>
+          marginBottom: "2.5rem" }}>Why Students Choose RiseIQ</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.25rem" }}>
           {BENEFITS.map((b) => (
             <div key={b.title} style={{ padding: "1.25rem", borderRadius: "var(--radius-md)",

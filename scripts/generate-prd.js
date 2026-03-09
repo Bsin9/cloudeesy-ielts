@@ -100,7 +100,7 @@ const doc = new Document({
       default: new Header({
         children: [new Paragraph({
           children: [
-            new TextRun({ text: "Cloudeesy IELTS — Product Requirements Document", size: 18, font: "Arial", color: "64748B" }),
+            new TextRun({ text: "RiseIQ IELTS — Product Requirements Document", size: 18, font: "Arial", color: "64748B" }),
           ],
           border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: "1DB8A4", space: 1 } },
         })],
@@ -110,7 +110,7 @@ const doc = new Document({
       default: new Footer({
         children: [new Paragraph({
           children: [
-            new TextRun({ text: "© 2025 Cloudeesy  ·  Confidential  ·  Page ", size: 18, font: "Arial", color: "64748B" }),
+            new TextRun({ text: "© 2025 RiseIQ  ·  Confidential  ·  Page ", size: 18, font: "Arial", color: "64748B" }),
             new TextRun({ children: [PageNumber.CURRENT], size: 18, font: "Arial", color: "64748B" }),
           ],
           alignment: AlignmentType.CENTER,
@@ -120,7 +120,7 @@ const doc = new Document({
     children: [
       // ── Cover ──────────────────────────────────────────────────
       new Paragraph({
-        children: [new TextRun({ text: "Cloudeesy IELTS", bold: true, size: 64, font: "Arial", color: "0F1F3D" })],
+        children: [new TextRun({ text: "RiseIQ IELTS", bold: true, size: 64, font: "Arial", color: "0F1F3D" })],
         spacing: { before: 1440, after: 240 },
         alignment: AlignmentType.CENTER,
       }),
@@ -142,9 +142,9 @@ const doc = new Document({
 
       // ── 1. Executive Summary ───────────────────────────────────
       h1("1. Executive Summary"),
-      body("Cloudeesy IELTS is a student-first online preparation platform purpose-built for IELTS General Training, with architecture designed to extend to Academic IELTS in Phase 2. The platform enables learners to practise all four test skills — Reading, Writing, Listening, and Speaking — through structured lessons, timed interactive sessions, and full mock tests, with real-time feedback and personalised progress tracking."),
+      body("RiseIQ IELTS is a student-first online preparation platform purpose-built for IELTS General Training, with architecture designed to extend to Academic IELTS in Phase 2. The platform enables learners to practise all four test skills — Reading, Writing, Listening, and Speaking — through structured lessons, timed interactive sessions, and full mock tests, with real-time feedback and personalised progress tracking."),
       body("The product targets three core user personas: first-time IELTS candidates (beginners), intermediate learners retaking the exam, and working professionals and immigration candidates who need efficient, goal-oriented preparation. The MVP delivers a complete learning loop from onboarding to mock test completion."),
-      body("Platform name: Cloudeesy IELTS. Tagline: Train Smarter. Score Higher. Start Today."),
+      body("Platform name: RiseIQ IELTS. Tagline: Train Smarter. Score Higher. Start Today."),
 
       // ── 2. Product Vision ─────────────────────────────────────
       h1("2. Product Vision & Goals"),
@@ -379,7 +379,7 @@ const doc = new Document({
 
 // ── Write to file ─────────────────────────────────────────────────
 Packer.toBuffer(doc).then((buffer) => {
-  const outPath = "/sessions/jolly-loving-feynman/mnt/IELTS/Cloudeesy-IELTS-PRD.docx";
+  const outPath = "/sessions/jolly-loving-feynman/mnt/IELTS/RiseIQ-IELTS-PRD.docx";
   fs.writeFileSync(outPath, buffer);
   console.log("PRD written to:", outPath);
 }).catch((err) => {

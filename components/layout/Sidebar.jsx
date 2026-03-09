@@ -44,7 +44,7 @@ export function Sidebar() {
           <Zap size={16} color="#fff" aria-hidden="true" />
         </div>
         <span style={{ fontWeight: 800, fontSize: "0.9375rem", color: "var(--color-brand-navy)" }}>
-          Cloudeesy <span style={{ color: "var(--color-brand-teal)" }}>IELTS</span>
+          RiseIQ <span style={{ color: "var(--color-brand-teal)" }}>IELTS</span>
         </span>
       </div>
 

@@ -2,8 +2,8 @@
  * SEO metadata per page — consumed by Next.js generateMetadata()
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.cloudeesy.com";
-const APP_NAME = "Cloudeesy IELTS";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.riseiq.ca";
+const APP_NAME = "RiseIQ IELTS";
 
 export const META = {
   default: {
@@ -17,7 +17,7 @@ export const META = {
       siteName: APP_NAME,
       type: "website",
     },
-    twitter: { card: "summary_large_image", site: "@cloudeesy" },
+    twitter: { card: "summary_large_image", site: "@riseiq" },
     keywords: ["IELTS", "IELTS General Training", "IELTS preparation", "band score", "IELTS practice"],
   },
 

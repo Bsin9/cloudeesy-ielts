@@ -1,10 +1,10 @@
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://cloudeesy.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://riseiq.ca"),
   title: {
-    default:  "Cloudeesy IELTS — Train Smarter. Score Higher. Start Today.",
-    template: "%s | Cloudeesy IELTS",
+    default:  "RiseIQ IELTS — Train Smarter. Score Higher. Start Today.",
+    template: "%s | RiseIQ IELTS",
   },
   description:
     "Prepare for IELTS General Training with personalised practice, timed sessions, real feedback, and full mock tests. Band 7+ strategies built in.",
@@ -15,16 +15,16 @@ export const metadata = {
     "IELTS mock test free",
     "IELTS study platform",
   ],
-  authors: [{ name: "Cloudeesy" }],
+  authors: [{ name: "RiseIQ" }],
   openGraph: {
     type:        "website",
-    siteName:    "Cloudeesy IELTS",
-    title:       "Cloudeesy IELTS — Train Smarter. Score Higher.",
+    siteName:    "RiseIQ IELTS",
+    title:       "RiseIQ IELTS — Train Smarter. Score Higher.",
     description: "Your personalised IELTS preparation platform. Reading, Writing, Listening, Speaking — all in one place.",
   },
   twitter: {
     card:        "summary_large_image",
-    title:       "Cloudeesy IELTS — Train Smarter. Score Higher.",
+    title:       "RiseIQ IELTS — Train Smarter. Score Higher.",
     description: "Personalised IELTS prep. Mock tests. Real feedback. Start free today.",
   },
   robots: { index: true, follow: true },
@@ -40,10 +40,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Course",
-              "name": "Cloudeesy IELTS Preparation",
+              "name": "RiseIQ IELTS Preparation",
               "description":
                 "Comprehensive IELTS General Training preparation with practice modules, mock tests, and personalised feedback.",
-              "provider": { "@type": "Organization", "name": "Cloudeesy" },
+              "provider": { "@type": "Organization", "name": "RiseIQ" },
             }),
           }}
         />

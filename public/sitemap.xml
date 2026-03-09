@@ -3,7 +3,7 @@
 
   <!-- Core public pages -->
   <url>
-    <loc>https://www.cloudeesy.com/</loc>
+    <loc>https://www.riseiq.ca/</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,25 +11,25 @@
 
   <!-- Practice module landing pages (public-facing) -->
   <url>
-    <loc>https://www.cloudeesy.com/practice/reading</loc>
+    <loc>https://www.riseiq.ca/practice/reading</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cloudeesy.com/practice/writing</loc>
+    <loc>https://www.riseiq.ca/practice/writing</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cloudeesy.com/practice/listening</loc>
+    <loc>https://www.riseiq.ca/practice/listening</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cloudeesy.com/practice/speaking</loc>
+    <loc>https://www.riseiq.ca/practice/speaking</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -37,7 +37,7 @@
 
   <!-- Mock test -->
   <url>
-    <loc>https://www.cloudeesy.com/mock-test</loc>
+    <loc>https://www.riseiq.ca/mock-test</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -45,13 +45,13 @@
 
   <!-- Auth pages -->
   <url>
-    <loc>https://www.cloudeesy.com/auth/login</loc>
+    <loc>https://www.riseiq.ca/auth/login</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cloudeesy.com/auth/signup</loc>
+    <loc>https://www.riseiq.ca/auth/signup</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

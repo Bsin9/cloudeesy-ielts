@@ -9,4 +9,4 @@ Disallow: /auth/
 Disallow: /profile
 Disallow: /session/
 
-Sitemap: https://www.cloudeesy.com/sitemap.xml
+Sitemap: https://www.riseiq.ca/sitemap.xml

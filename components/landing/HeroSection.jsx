@@ -27,7 +27,7 @@ export function HeroSection() {
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", fontWeight: 900,
           color: "var(--color-brand-navy)", lineHeight: 1.15, marginBottom: "1.25rem" }}>
           Score Band 7+ with<br />
-          <span style={{ color: "var(--color-brand-teal)" }}>Cloudeesy IELTS</span>
+          <span style={{ color: "var(--color-brand-teal)" }}>RiseIQ IELTS</span>
         </h1>
 
         <p style={{ fontSize: "1.125rem", color: "var(--color-brand-gray)",
