@@ -33,6 +33,10 @@ export const ROUTES = {
   // Session engine
   SESSION: (id) => `/session/${id}`,
 
+  // Learning Hub
+  LEARNING: "/learning",
+  LEARNING_COURSE: (key) => `/learning/${key}`,
+
   // Other protected pages
   MOCK_TEST: "/mock-test",
   PROGRESS: "/progress",

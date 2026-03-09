@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, BookOpen, PenLine, Headphones, Mic,
   BarChart2, User, FileText, Zap, LogOut, GraduationCap,
+  Library,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { ROUTES } from "@/config/routes.js";
@@ -20,8 +21,15 @@ const NAV_ITEMS = [
   { href: ROUTES.PROFILE,            label: "Profile",    Icon: User            },
 ];
 
+const LEARNING_COURSES = [
+  { key: "ielts",  label: "IELTS",  emoji: "📝" },
+  { key: "sql",    label: "SQL",    emoji: "🗄️" },
+  { key: "azure",  label: "Azure",  emoji: "☁️" },
+];
+
 export function Sidebar() {
   const pathname = usePathname();
+  const isInLearning = pathname.startsWith("/learning");
 
   return (
     <aside
@@ -59,6 +67,7 @@ export function Sidebar() {
       <nav aria-label="Main navigation" style={{
         flex: 1, padding: "0.75rem 0.5rem",
         display: "flex", flexDirection: "column", gap: "0.125rem",
+        overflowY: "auto",
       }}>
         {NAV_ITEMS.map(({ href, label, Icon }) => {
           const isActive = pathname === href || (href !== ROUTES.DASHBOARD && pathname.startsWith(href));
@@ -80,6 +89,52 @@ export function Sidebar() {
             </Link>
           );
         })}
+
+        {/* ── Learning Hub section ─────────────────────────────── */}
+        <div style={{ marginTop: "0.5rem", paddingTop: "0.5rem", borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+          {/* Top-level Learning Hub link */}
+          <Link
+            href={ROUTES.LEARNING}
+            aria-current={pathname === ROUTES.LEARNING ? "page" : undefined}
+            style={{
+              display: "flex", alignItems: "center", gap: "0.625rem",
+              padding: "0.5rem 0.75rem", borderRadius: "0.5rem",
+              fontSize: "0.875rem", fontWeight: isInLearning ? 600 : 500,
+              textDecoration: "none", transition: "background 0.15s, color 0.15s",
+              background: isInLearning ? "var(--color-brand-teal-pale, #e8f8f5)" : "transparent",
+              color: isInLearning ? "var(--color-brand-teal)" : "var(--color-brand-gray)",
+            }}>
+            <Library size={16} aria-hidden="true" />
+            Learning Hub
+          </Link>
+
+          {/* Course sub-links — visible when inside /learning */}
+          {isInLearning && (
+            <div style={{ paddingLeft: "0.75rem", marginTop: "0.125rem", display: "flex", flexDirection: "column", gap: "0.125rem" }}>
+              {LEARNING_COURSES.map(({ key, label, emoji }) => {
+                const href = ROUTES.LEARNING_COURSE(key);
+                const isActive = pathname === href || pathname.startsWith(href + "/");
+                return (
+                  <Link
+                    key={key}
+                    href={href}
+                    aria-current={isActive ? "page" : undefined}
+                    style={{
+                      display: "flex", alignItems: "center", gap: "0.5rem",
+                      padding: "0.375rem 0.625rem", borderRadius: "0.5rem",
+                      fontSize: "0.8125rem", fontWeight: isActive ? 600 : 400,
+                      textDecoration: "none", transition: "background 0.15s, color 0.15s",
+                      background: isActive ? "var(--color-brand-teal-pale, #e8f8f5)" : "transparent",
+                      color: isActive ? "var(--color-brand-teal)" : "var(--color-brand-gray)",
+                    }}>
+                    <span style={{ fontSize: "0.75rem" }}>{emoji}</span>
+                    {label}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </nav>
 
       {/* Footer info */}
