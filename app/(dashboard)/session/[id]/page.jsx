@@ -19,7 +19,14 @@ export default async function SessionPage({ params }) {
   if (id.startsWith("wt")) {
     const all    = [...promptsData.task1, ...promptsData.task2];
     const prompt = all.find((p) => p.id === id) ?? all[0];
-    return <WritingSession prompt={prompt} />;
+    const session = {
+      id:       prompt.id,
+      title:    prompt.title,
+      taskType: prompt.type ?? (id.includes("task1") ? "task1" : "task2"),
+      duration: prompt.type === "task1" ? 1200 : 2400,
+      prompt,
+    };
+    return <WritingSession session={session} />;
   }
 
   if (id.startsWith("sc_")) {
