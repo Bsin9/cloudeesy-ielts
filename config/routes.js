@@ -9,10 +9,19 @@ export const ROUTES = {
   SIGNUP: "/signup",
   FORGOT_PASSWORD: "/forgot-password",
 
+  // Public marketing
+  COURSES: "/courses",
+  COURSE: (slug) => `/courses/${slug}`,
+  PRICING: "/pricing",
+  ABOUT: "/about",
+  BLOG: "/blog",
+  CONTACT: "/contact",
+
   // Dashboard
   DASHBOARD: "/dashboard",
+  MY_COURSES: "/my-courses",
 
-  // Practice modules
+  // Practice modules (IELTS)
   PRACTICE: {
     ROOT: "/practice",
     READING: "/practice/reading",
