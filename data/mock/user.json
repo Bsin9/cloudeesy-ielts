@@ -1,0 +1,14 @@
+{
+  "id": "u_001",
+  "name": "Alex Chen",
+  "email": "alex@example.com",
+  "targetBand": 7.5,
+  "examDate": "2025-12-15",
+  "studyPlan": "intensive",
+  "streak": 12,
+  "totalSessions": 34,
+  "joinedAt": "2025-09-01",
+  "currentBand": 6.5,
+  "readiness": 72,
+  "notifications": { "email": true, "push": false }
+}

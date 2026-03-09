@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /practice/
+Allow: /mock-test
+Allow: /dashboard
+
+Disallow: /api/
+Disallow: /auth/
+Disallow: /profile
+Disallow: /session/
+
+Sitemap: https://www.cloudeesy.com/sitemap.xml

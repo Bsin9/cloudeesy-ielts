@@ -1,0 +1,60 @@
+{
+  "id": "s_001",
+  "module": "reading",
+  "type": "practice",
+  "durationSeconds": 2700,
+  "passage": {
+    "title": "The Rise of Urban Vertical Farming",
+    "text": "As cities continue to expand and agricultural land faces increasing pressure from climate change and population growth, a new approach to food production has emerged: vertical farming. Unlike conventional agriculture, vertical farming stacks crops in layers within controlled indoor environments, using LED lighting and hydroponic or aeroponic systems to grow produce without soil. The concept was first proposed in 1999 by Dickson Despommier, a professor at Columbia University, who argued that a single 30-storey building could feed 50,000 people year-round.\n\nProponents of vertical farming cite several compelling advantages. Because crops grow in sealed environments, they require no pesticides, produce up to 70% less water waste compared with traditional farming, and can be harvested year-round regardless of seasonal conditions. Proximity to consumers also reduces transport costs and carbon emissions. However, critics point to the substantial energy demands of artificial lighting as a major obstacle: studies estimate that energy costs account for as much as 25% of the total operating budget of a vertical farm, making commercial viability a persistent challenge.\n\nDespite these economic hurdles, the industry has attracted significant investment. In 2021 alone, global investment in vertical farming exceeded $2 billion, with companies in Japan, South Korea, the United States, and the Netherlands leading development. Japan, which imports nearly 60% of its calories, has been a particularly enthusiastic adopter, with hundreds of indoor farms operating commercially across the country. Singapore — which imports over 90% of its food — has set an ambitious target to produce 30% of its nutritional needs locally by 2030, with vertical farming at the core of its strategy.\n\nThe technology is also evolving rapidly. New generations of LEDs are dramatically more energy-efficient, reducing operating costs by as much as 40%. Some facilities are now powered entirely by renewable energy, addressing the criticism over carbon footprints. Artificial intelligence is being deployed to optimise growing conditions in real time, adjusting temperature, humidity, and light spectrum to maximise yield and nutritional content. Researchers at MIT are currently developing plant varieties specifically bred for indoor growing conditions, promising even greater efficiency gains in the coming decade."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "tfng",
+      "text": "Dickson Despommier first proposed the concept of vertical farming in 1999.",
+      "answer": "TRUE",
+      "explanation": "The passage directly states: 'The concept was first proposed in 1999 by Dickson Despommier, a professor at Columbia University.'"
+    },
+    {
+      "id": "q2",
+      "type": "tfng",
+      "text": "Vertical farms use more water than traditional agricultural methods.",
+      "answer": "FALSE",
+      "explanation": "The passage states vertical farms 'produce up to 70% less water waste compared with traditional farming' — the opposite is true."
+    },
+    {
+      "id": "q3",
+      "type": "tfng",
+      "text": "Energy costs represent the majority of operating expenses in a vertical farm.",
+      "answer": "NOT GIVEN",
+      "explanation": "The passage says energy costs 'account for as much as 25%' of operating costs — this is significant but not necessarily the majority. Whether it's the single largest cost is not stated."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "text": "Why has Japan been particularly quick to adopt vertical farming?",
+      "options": [
+        "A. Its climate is unsuitable for traditional outdoor farming.",
+        "B. It relies heavily on food imports.",
+        "C. The government has provided large subsidies.",
+        "D. Japanese consumers prefer pesticide-free produce."
+      ],
+      "answer": "B",
+      "explanation": "The passage states Japan 'imports nearly 60% of its calories', making food security a key motivator for vertical farm adoption."
+    },
+    {
+      "id": "q5",
+      "type": "gap_fill",
+      "text": "New LED technology has reduced vertical farm operating costs by up to ___.",
+      "answer": "40%",
+      "explanation": "The passage mentions 'reducing operating costs by as much as 40%' referring to new generations of LEDs."
+    },
+    {
+      "id": "q6",
+      "type": "tfng",
+      "text": "MIT researchers are developing new plant varieties for indoor growing environments.",
+      "answer": "TRUE",
+      "explanation": "The passage directly confirms this in the final paragraph."
+    }
+  ]
+}

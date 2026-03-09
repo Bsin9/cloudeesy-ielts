@@ -1,0 +1,109 @@
+{
+  "reading": [
+    {
+      "id": "r_l_01",
+      "title": "True / False / Not Given",
+      "description": "Master the most misunderstood question type with a 3-step elimination strategy.",
+      "difficulty": "beginner",
+      "duration": 20,
+      "completed": true,
+      "score": 7.0
+    },
+    {
+      "id": "r_l_02",
+      "title": "Matching Headings",
+      "description": "Learn to scan for main ideas, not keywords.",
+      "difficulty": "intermediate",
+      "duration": 25,
+      "completed": true,
+      "score": 6.0
+    },
+    {
+      "id": "r_l_03",
+      "title": "Gap Fill & Sentence Completion",
+      "description": "Word count rules, paraphrasing traps, and answer location techniques.",
+      "difficulty": "intermediate",
+      "duration": 30,
+      "completed": false,
+      "score": null
+    },
+    {
+      "id": "r_l_04",
+      "title": "Multiple Choice Questions",
+      "description": "Identify distractor options and work through elimination.",
+      "difficulty": "advanced",
+      "duration": 35,
+      "completed": false,
+      "score": null
+    }
+  ],
+  "writing": [
+    {
+      "id": "w_l_01",
+      "title": "Task 1 — Letter Writing Structures",
+      "description": "Formal, semi-formal, and informal register with band 7+ openings and closings.",
+      "difficulty": "beginner",
+      "duration": 30,
+      "completed": true,
+      "score": 6.5
+    },
+    {
+      "id": "w_l_02",
+      "title": "Task 2 — Opinion Essays",
+      "description": "4-paragraph structure, thesis statements, and cohesive linking phrases.",
+      "difficulty": "intermediate",
+      "duration": 45,
+      "completed": false,
+      "score": null
+    },
+    {
+      "id": "w_l_03",
+      "title": "Task 2 — Discussion Essays",
+      "description": "Present both sides with balance and conclude clearly.",
+      "difficulty": "intermediate",
+      "duration": 45,
+      "completed": false,
+      "score": null
+    }
+  ],
+  "listening": [
+    {
+      "id": "l_l_01",
+      "title": "Section 1 — Everyday Conversations",
+      "description": "Numbers, dates, names, and addresses. Common prediction techniques.",
+      "difficulty": "beginner",
+      "duration": 20,
+      "completed": true,
+      "score": 7.0
+    },
+    {
+      "id": "l_l_02",
+      "title": "Section 2 — Monologues",
+      "description": "Public announcements, tours, and instructions. Signpost language.",
+      "difficulty": "intermediate",
+      "duration": 25,
+      "completed": false,
+      "score": null
+    }
+  ],
+  "speaking": [
+    {
+      "id": "sp_l_01",
+      "title": "Part 1 — Personal Questions",
+      "description": "Extend answers with reasons, examples, and contrast. 2-minute fluency drills.",
+      "difficulty": "beginner",
+      "duration": 15,
+      "completed": true,
+      "score": 6.5
+    },
+    {
+      "id": "sp_l_02",
+      "title": "Part 2 — Cue Card",
+      "description": "1-minute prep, 2-minute talk. Structuring with past / present / feelings.",
+      "difficulty": "intermediate",
+      "duration": 20,
+      "completed": false,
+      "score": null
+    }
+  ]
+}

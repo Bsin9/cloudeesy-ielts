@@ -1,0 +1,50 @@
+{
+  "task1": [
+    {
+      "id": "wt1_001",
+      "title": "Letter to a Library",
+      "prompt": "You recently borrowed a book from your local library and have lost it. Write a letter to the library. In your letter:\n• explain what happened to the book\n• apologise for losing it\n• say what you will do about it",
+      "register": "formal",
+      "wordLimit": 150,
+      "timeMinutes": 20,
+      "sampleBand7": "Dear Library Manager,\n\nI am writing regarding a book I borrowed last month — 'The Great Gatsby' by F. Scott Fitzgerald (Library ID: LB-4421). I regret to inform you that I have been unable to locate it despite conducting a thorough search of my home.\n\nI sincerely apologise for the inconvenience this has caused. I believe the book may have been accidentally misplaced during a recent house move, which makes retrieval unlikely.\n\nTo resolve this matter promptly, I would like to replace the missing copy at my own expense. Please let me know the cost of a replacement, and I will arrange payment at the earliest opportunity. I would also be happy to visit in person if that would be more convenient.\n\nOnce again, I apologise unreservedly for this unfortunate situation.\n\nYours faithfully,\nAlex Chen"
+    },
+    {
+      "id": "wt1_002",
+      "title": "Complaint About a Noisy Neighbour",
+      "prompt": "You have been experiencing problems with noise from your neighbour. Write a letter to your landlord. In your letter:\n• describe the problem\n• explain how it is affecting you\n• suggest what you would like the landlord to do",
+      "register": "semi-formal",
+      "wordLimit": 150,
+      "timeMinutes": 20,
+      "sampleBand7": null
+    }
+  ],
+  "task2": [
+    {
+      "id": "wt2_001",
+      "title": "Social Media and Society",
+      "prompt": "Some people believe that social media has had a largely negative effect on society. Others argue that it has brought many benefits. Discuss both views and give your own opinion.",
+      "type": "discussion",
+      "wordLimit": 250,
+      "timeMinutes": 40,
+      "keyIdeas": {
+        "negative": ["misinformation", "mental health impacts", "reduced attention spans", "privacy concerns"],
+        "positive": ["global connectivity", "small business growth", "crisis communication", "free information access"]
+      },
+      "sampleBand7": null
+    },
+    {
+      "id": "wt2_002",
+      "title": "Working from Home",
+      "prompt": "Many companies now allow employees to work from home. Do you think the advantages of this outweigh the disadvantages?",
+      "type": "opinion",
+      "wordLimit": 250,
+      "timeMinutes": 40,
+      "keyIdeas": {
+        "advantages": ["flexibility", "no commute", "better work-life balance", "cost savings"],
+        "disadvantages": ["isolation", "blurred boundaries", "collaboration challenges", "home distractions"]
+      },
+      "sampleBand7": null
+    }
+  ]
+}

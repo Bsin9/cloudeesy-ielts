@@ -1,0 +1,42 @@
+{
+  "task1": [
+    {
+      "id": "wt_task1_001",
+      "type": "task1",
+      "title": "Library Noise Complaint",
+      "prompt": "You have been experiencing problems at your local library. The noise level has been disturbing your studies.\n\nWrite a letter to the library manager. In your letter:\n• Describe the problem\n• Explain how it has affected you\n• Suggest what action should be taken",
+      "format": "semi-formal",
+      "minWords": 150,
+      "sampleBand7": "Dear Manager,\n\nI am writing to draw your attention to a persistent problem that has been significantly affecting my ability to study at the Riverside Public Library.\n\nOver the past several weeks, I have noticed an increasing level of noise, particularly from groups of students who use mobile phones and speak loudly in the reading areas. This is especially problematic in the afternoons between 3 pm and 6 pm.\n\nAs a regular visitor who relies on the library for focused study, this situation has made it very difficult to concentrate. I have had to leave on several occasions without completing my work, which has had a knock-on effect on my studies.\n\nI would appreciate it if you could consider introducing stricter guidelines for quiet zones, perhaps with clear signage, and asking staff to politely remind visitors of library etiquette when necessary.\n\nI hope you will take this matter seriously, as the library is a valuable community resource that benefits many people.\n\nYours faithfully,\nA. Student"
+    },
+    {
+      "id": "wt_task1_002",
+      "type": "task1",
+      "title": "Noisy Neighbour",
+      "prompt": "You have been having problems with noise from a neighbour.\n\nWrite a letter to your neighbour. In your letter:\n• Describe the problem you are experiencing\n• Explain how it is affecting you\n• Suggest how the situation could be improved",
+      "format": "semi-formal",
+      "minWords": 150,
+      "sampleBand7": null
+    }
+  ],
+  "task2": [
+    {
+      "id": "wt_task2_001",
+      "type": "task2",
+      "title": "Social Media and Society",
+      "prompt": "Some people believe that social media has had a largely positive effect on society, while others think it has been harmful.\n\nDiscuss both views and give your own opinion.",
+      "format": "formal",
+      "minWords": 250,
+      "sampleBand7": null
+    },
+    {
+      "id": "wt_task2_002",
+      "type": "task2",
+      "title": "Remote Work",
+      "prompt": "In many countries, more people are choosing to work from home rather than commuting to an office.\n\nDo the advantages of this trend outweigh the disadvantages? Give reasons for your answer and include relevant examples.",
+      "format": "formal",
+      "minWords": 250,
+      "sampleBand7": null
+    }
+  ]
+}

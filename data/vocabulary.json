@@ -1,0 +1,14 @@
+{
+  "academic": [
+    { "word": "accumulate",   "definition": "to gradually gather or collect",   "example": "Students accumulate skills over time." },
+    { "word": "analyse",      "definition": "to examine in detail",             "example": "You should analyse the data carefully." },
+    { "word": "demonstrate",  "definition": "to show or prove clearly",         "example": "The results demonstrate a clear trend." },
+    { "word": "evaluate",     "definition": "to assess the quality or value of","example": "Candidates must evaluate both sides." },
+    { "word": "significant",  "definition": "important or noteworthy",          "example": "There was a significant improvement." }
+  ],
+  "writingConnectors": [
+    "Furthermore", "Moreover", "However", "Nevertheless", "Consequently",
+    "In addition", "On the other hand", "In contrast", "As a result",
+    "For instance", "For example", "In conclusion", "To summarise"
+  ]
+}

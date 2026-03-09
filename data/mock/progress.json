@@ -1,0 +1,35 @@
+{
+  "userId": "u_001",
+  "weeklyActivity": [
+    { "day": "Mon", "minutes": 45, "sessions": 2 },
+    { "day": "Tue", "minutes": 30, "sessions": 1 },
+    { "day": "Wed", "minutes": 60, "sessions": 3 },
+    { "day": "Thu", "minutes": 20, "sessions": 1 },
+    { "day": "Fri", "minutes": 50, "sessions": 2 },
+    { "day": "Sat", "minutes": 90, "sessions": 4 },
+    { "day": "Sun", "minutes": 35, "sessions": 1 }
+  ],
+  "moduleScores": {
+    "reading":   { "current": 6.5, "trend": [5.5, 6.0, 6.0, 6.5, 6.5], "sessions": 12 },
+    "writing":   { "current": 6.0, "trend": [5.0, 5.5, 5.5, 6.0, 6.0], "sessions": 8  },
+    "listening": { "current": 7.0, "trend": [6.0, 6.5, 7.0, 7.0, 7.0], "sessions": 9  },
+    "speaking":  { "current": 6.5, "trend": [5.5, 6.0, 6.5, 6.5, 6.5], "sessions": 5  }
+  },
+  "weakAreas": [
+    { "module": "writing",  "topic": "Task 2 coherence",         "score": 5.5, "priority": "high"   },
+    { "module": "reading",  "topic": "Matching headings",        "score": 6.0, "priority": "medium" },
+    { "module": "speaking", "topic": "Vocabulary range",         "score": 6.0, "priority": "medium" },
+    { "module": "writing",  "topic": "Grammar accuracy",         "score": 6.0, "priority": "low"    }
+  ],
+  "recentSessions": [
+    { "id": "s_021", "module": "reading",   "date": "2025-11-08", "score": 6.5, "duration": 45, "completed": true  },
+    { "id": "s_022", "module": "listening", "date": "2025-11-07", "score": 7.0, "duration": 30, "completed": true  },
+    { "id": "s_023", "module": "writing",   "date": "2025-11-06", "score": 6.0, "duration": 60, "completed": true  },
+    { "id": "s_024", "module": "speaking",  "date": "2025-11-05", "score": 6.5, "duration": 20, "completed": true  },
+    { "id": "s_025", "module": "reading",   "date": "2025-11-04", "score": 6.0, "duration": 40, "completed": false }
+  ],
+  "mockTests": [
+    { "id": "mt_001", "date": "2025-10-20", "overall": 6.5, "reading": 6.5, "writing": 6.0, "listening": 7.0, "speaking": 6.5 },
+    { "id": "mt_002", "date": "2025-11-01", "overall": 6.5, "reading": 7.0, "writing": 6.0, "listening": 7.0, "speaking": 6.0 }
+  ]
+}

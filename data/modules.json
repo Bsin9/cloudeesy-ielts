@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reading",
+    "label": "Reading",
+    "icon": "📖",
+    "color": "#1DB8A4",
+    "description": "True/False/Not Given, MCQ, gap fill, matching headings",
+    "sessionDuration": 1200,
+    "bandWeight": 0.25
+  },
+  {
+    "id": "writing",
+    "label": "Writing",
+    "icon": "✍️",
+    "color": "#6C63FF",
+    "description": "Task 1 (Letter) and Task 2 (Essay) with word-count feedback",
+    "sessionDuration": 3600,
+    "bandWeight": 0.25
+  },
+  {
+    "id": "listening",
+    "label": "Listening",
+    "icon": "🎧",
+    "color": "#F5A623",
+    "description": "4-section audio with gap fill, MCQ, and matching",
+    "sessionDuration": 600,
+    "bandWeight": 0.25
+  },
+  {
+    "id": "speaking",
+    "label": "Speaking",
+    "icon": "🎤",
+    "color": "#E94E77",
+    "description": "Part 2 cue card with prep timer, follow-up questions, vocabulary bank",
+    "sessionDuration": 900,
+    "bandWeight": 0.25
+  }
+]

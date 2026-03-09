@@ -1,0 +1,9 @@
+[
+  {
+    "id": "mt_001",
+    "title": "Full Mock Test — General Training",
+    "sections": ["reading", "writing", "listening", "speaking"],
+    "durationMin": 160,
+    "available": true
+  }
+]

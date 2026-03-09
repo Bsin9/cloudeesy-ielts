@@ -1,0 +1,36 @@
+{
+  "cueCards": [
+    {
+      "id": "sc_001",
+      "topic": "Describe a skill you have learned",
+      "bullet1": "What the skill is",
+      "bullet2": "How and when you learned it",
+      "bullet3": "How difficult it was to learn",
+      "question": "and explain how this skill has been useful in your life.",
+      "prepSeconds": 60,
+      "talkSeconds": 120,
+      "followUp": [
+        "Do you think it's important for people to keep learning new skills throughout their lives?",
+        "What kinds of skills are most valued in your country right now?",
+        "How has technology changed the way people learn new skills?"
+      ],
+      "vocabularyBank": ["acquire", "proficiency", "perseverance", "practical application", "mastery", "hands-on experience"]
+    },
+    {
+      "id": "sc_002",
+      "topic": "Describe a memorable journey you have taken",
+      "bullet1": "Where you went",
+      "bullet2": "Who you travelled with",
+      "bullet3": "What you did there",
+      "question": "and explain why this journey was memorable.",
+      "prepSeconds": 60,
+      "talkSeconds": 120,
+      "followUp": [
+        "Do you think travelling abroad is important for young people?",
+        "How do you think tourism affects local communities?",
+        "What are the pros and cons of travelling alone versus with others?"
+      ],
+      "vocabularyBank": ["breathtaking", "immerse", "itinerary", "eye-opening", "venture", "unforgettable"]
+    }
+  ]
+}

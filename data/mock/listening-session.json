@@ -1,0 +1,79 @@
+{
+  "id": "ls_001",
+  "title": "Section 1 — Booking a Hotel Room",
+  "section": 1,
+  "duration": 600,
+  "audioUrl": null,
+  "transcript": [
+    "Agent: Good morning, Riverside Hotel, how can I help you?",
+    "Caller: Hi, I'd like to book a room for two nights, from the 14th to the 16th of March.",
+    "Agent: Of course. And how many guests will be staying?",
+    "Caller: Just two adults — me and my partner.",
+    "Agent: We have a standard double room available for £95 per night, or a superior room with a garden view for £120.",
+    "Caller: I'll go for the superior room, please.",
+    "Agent: Great choice. Can I take your name?",
+    "Caller: It's Patricia Huang — H-U-A-N-G.",
+    "Agent: Thank you, Ms Huang. And a contact number?",
+    "Caller: 07812 334 509.",
+    "Agent: Perfect. Do you have any dietary requirements for breakfast?",
+    "Caller: Yes, I'm vegetarian.",
+    "Agent: Noted. Breakfast is served from 7 to 10. Check-in is after 3 pm. Your booking reference is RV4821.",
+    "Caller: Wonderful, thank you."
+  ],
+  "questions": [
+    {
+      "id": "ls_q1",
+      "type": "gap_fill",
+      "text": "The caller wants to book a room from the 14th to the ________ of March.",
+      "answer": "16th",
+      "explanation": "The caller says 'from the 14th to the 16th of March'."
+    },
+    {
+      "id": "ls_q2",
+      "type": "mcq",
+      "text": "Which type of room does the caller choose?",
+      "options": [
+        { "label": "A", "text": "Standard double at £95" },
+        { "label": "B", "text": "Superior room with a garden view at £120" },
+        { "label": "C", "text": "Standard double at £120" },
+        { "label": "D", "text": "Superior room at £95" }
+      ],
+      "answer": "B",
+      "explanation": "The caller says 'I'll go for the superior room' which is £120 per night with a garden view."
+    },
+    {
+      "id": "ls_q3",
+      "type": "gap_fill",
+      "text": "The caller's surname is ________.",
+      "answer": "Huang",
+      "explanation": "The caller spells it out: H-U-A-N-G."
+    },
+    {
+      "id": "ls_q4",
+      "type": "gap_fill",
+      "text": "The caller's contact number is ________.",
+      "answer": "07812 334 509",
+      "explanation": "The caller gives the number 07812 334 509."
+    },
+    {
+      "id": "ls_q5",
+      "type": "mcq",
+      "text": "What dietary requirement does the caller have?",
+      "options": [
+        { "label": "A", "text": "Vegan" },
+        { "label": "B", "text": "Gluten-free" },
+        { "label": "C", "text": "Vegetarian" },
+        { "label": "D", "text": "No requirement" }
+      ],
+      "answer": "C",
+      "explanation": "The caller says 'I'm vegetarian'."
+    },
+    {
+      "id": "ls_q6",
+      "type": "gap_fill",
+      "text": "The booking reference number is ________.",
+      "answer": "RV4821",
+      "explanation": "The agent confirms the reference as RV4821."
+    }
+  ]
+}

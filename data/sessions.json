@@ -1,0 +1,10 @@
+[
+  { "id": "s_001",          "module": "reading",   "title": "The Rise of Urban Vertical Farming",  "difficulty": "intermediate", "durationMin": 20 },
+  { "id": "reading-timed",  "module": "reading",   "title": "Timed Reading Practice",              "difficulty": "intermediate", "durationMin": 20 },
+  { "id": "ls_001",         "module": "listening", "title": "Booking a Hotel Room (Section 1)",    "difficulty": "foundation",   "durationMin": 10 },
+  { "id": "listening-timed","module": "listening", "title": "Timed Listening Practice",            "difficulty": "intermediate", "durationMin": 10 },
+  { "id": "wt_task1_001",   "module": "writing",   "title": "Task 1 — Library Complaint Letter",   "difficulty": "intermediate", "durationMin": 20 },
+  { "id": "wt_task2_001",   "module": "writing",   "title": "Task 2 — Social Media Essay",         "difficulty": "intermediate", "durationMin": 40 },
+  { "id": "sc_001",         "module": "speaking",  "title": "Describe a Memorable Journey",        "difficulty": "intermediate", "durationMin": 15 },
+  { "id": "sc_002",         "module": "speaking",  "title": "Describe a Skill You Would Like to Learn", "difficulty": "intermediate", "durationMin": 15 }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "u_001",
+    "name": "IELTS Learner",
+    "email": "",
+    "role": "student",
+    "targetBand": null,
+    "examDate": null,
+    "currentBand": null,
+    "streakDays": 0,
+    "totalSessions": 0,
+    "joinedAt": "2026-03-08"
+  }
+]
