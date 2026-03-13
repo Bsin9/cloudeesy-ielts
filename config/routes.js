@@ -21,13 +21,34 @@ export const ROUTES = {
   DASHBOARD: "/dashboard",
   MY_COURSES: "/my-courses",
 
-  // Practice modules (IELTS)
+  // Practice modules (IELTS) — legacy aliases kept for backwards compat
   PRACTICE: {
     ROOT: "/practice",
-    READING: "/practice/reading",
-    WRITING: "/practice/writing",
-    LISTENING: "/practice/listening",
-    SPEAKING: "/practice/speaking",
+    READING: "/ielts/reading",
+    WRITING: "/ielts/writing",
+    LISTENING: "/ielts/listening",
+    SPEAKING: "/ielts/speaking",
+  },
+
+  // IELTS course-scoped pages
+  IELTS: {
+    ROOT: "/ielts",
+    READING: "/ielts/reading",
+    WRITING: "/ielts/writing",
+    LISTENING: "/ielts/listening",
+    SPEAKING: "/ielts/speaking",
+  },
+
+  // SQL course-scoped pages
+  SQL: {
+    ROOT: "/sql",
+    PRACTICE: "/sql/practice",
+  },
+
+  // Azure course-scoped pages
+  AZURE: {
+    ROOT: "/azure",
+    LABS: "/azure/labs",
   },
 
   // Session engine
@@ -36,6 +57,9 @@ export const ROUTES = {
   // Learning Hub
   LEARNING: "/learning",
   LEARNING_COURSE: (key) => `/learning/${key}`,
+
+  // AI Study Assistant
+  SYNAPSE: "/synapse",
 
   // Other protected pages
   MOCK_TEST: "/mock-test",

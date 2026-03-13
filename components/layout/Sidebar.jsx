@@ -2,33 +2,34 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard, BookOpen, PenLine, Headphones, Mic,
-  BarChart2, User, FileText, Zap, LogOut,
-  Library,
+  LayoutDashboard, Brain, FileText, BarChart2, User,
+  Zap, LogOut, Library,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { ROUTES } from "@/config/routes.js";
+import { COURSE_REGISTRY_LIST, isEnrolledIn } from "@/config/courseRegistry.js";
 
+/**
+ * Universal primary nav — course-agnostic.
+ * Reading/Writing/Listening/Speaking are removed from the primary nav.
+ * They are accessible via the IELTS Dashboard section and Learning Hub.
+ */
 const NAV_ITEMS = [
-  { href: ROUTES.DASHBOARD,          label: "Dashboard",  Icon: LayoutDashboard },
-  { href: ROUTES.PRACTICE.READING,   label: "Reading",    Icon: BookOpen        },
-  { href: ROUTES.PRACTICE.WRITING,   label: "Writing",    Icon: PenLine         },
-  { href: ROUTES.PRACTICE.LISTENING, label: "Listening",  Icon: Headphones      },
-  { href: ROUTES.PRACTICE.SPEAKING,  label: "Speaking",   Icon: Mic             },
-  { href: ROUTES.MOCK_TEST,          label: "Mock Test",  Icon: FileText        },
-  { href: ROUTES.PROGRESS,           label: "Progress",   Icon: BarChart2       },
-  { href: ROUTES.PROFILE,            label: "Profile",    Icon: User            },
+  { href: ROUTES.DASHBOARD, label: "Dashboard", Icon: LayoutDashboard },
+  { href: ROUTES.SYNAPSE,   label: "Synapse",   Icon: Brain            },
+  { href: ROUTES.MOCK_TEST, label: "Mock Test", Icon: FileText         },
+  { href: ROUTES.PROGRESS,  label: "Progress",  Icon: BarChart2        },
+  { href: ROUTES.PROFILE,   label: "Profile",   Icon: User             },
 ];
 
-const LEARNING_COURSES = [
-  { key: "ielts",  label: "IELTS",  emoji: "📝" },
-  { key: "sql",    label: "SQL",    emoji: "🗄️" },
-  { key: "azure",  label: "Azure",  emoji: "☁️" },
-];
-
-export function Sidebar() {
+export function Sidebar({ enrolledCourses = [] }) {
   const pathname = usePathname();
   const isInLearning = pathname.startsWith("/learning");
+
+  // Courses the user is actively enrolled in (for sub-links)
+  const enrolledMeta = COURSE_REGISTRY_LIST.filter((c) =>
+    isEnrolledIn(enrolledCourses, c.key)
+  );
 
   return (
     <aside
@@ -107,10 +108,10 @@ export function Sidebar() {
             Learning Hub
           </Link>
 
-          {/* Course sub-links — visible when inside /learning */}
-          {isInLearning && (
+          {/* Enrolled course sub-links — visible when inside /learning */}
+          {isInLearning && enrolledMeta.length > 0 && (
             <div style={{ paddingLeft: "0.75rem", marginTop: "0.125rem", display: "flex", flexDirection: "column", gap: "0.125rem" }}>
-              {LEARNING_COURSES.map(({ key, label, emoji }) => {
+              {enrolledMeta.map(({ key, label, icon }) => {
                 const href = ROUTES.LEARNING_COURSE(key);
                 const isActive = pathname === href || pathname.startsWith(href + "/");
                 return (
@@ -126,7 +127,7 @@ export function Sidebar() {
                       background: isActive ? "var(--color-brand-teal-pale, #e8f8f5)" : "transparent",
                       color: isActive ? "var(--color-brand-teal)" : "var(--color-brand-gray)",
                     }}>
-                    <span style={{ fontSize: "0.75rem" }}>{emoji}</span>
+                    <span style={{ fontSize: "0.75rem" }}>{icon}</span>
                     {label}
                   </Link>
                 );
@@ -148,16 +149,6 @@ export function Sidebar() {
           <p style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.7)", margin: 0 }}>
             Powered by{" "}
             <span style={{ color: "var(--color-brand-teal)", fontWeight: 600 }}>Synapse Brain</span>
-          </p>
-        </div>
-
-        <div style={{
-          padding: "0.625rem 0.75rem", borderRadius: "0.5rem",
-          background: "var(--color-brand-gray-light)", marginBottom: "0.375rem",
-        }}>
-          <p style={{ fontSize: "0.7rem", color: "var(--color-brand-gray)", margin: 0 }}>IELTS target band</p>
-          <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--color-brand-navy)", margin: 0 }}>
-            7.5 · May 2026
           </p>
         </div>
 

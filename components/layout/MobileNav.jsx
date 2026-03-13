@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, GraduationCap, BarChart2, User, FileText } from "lucide-react";
+import { LayoutDashboard, Brain, BarChart2, User, Library } from "lucide-react";
 import { ROUTES } from "@/config/routes.js";
 
 const ITEMS = [
-  { href: ROUTES.DASHBOARD,  label: "Home",     Icon: LayoutDashboard },
-  { href: ROUTES.MY_COURSES, label: "Courses",  Icon: GraduationCap   },
-  { href: ROUTES.MOCK_TEST,  label: "Mock",     Icon: FileText        },
-  { href: ROUTES.PROGRESS,   label: "Progress", Icon: BarChart2       },
-  { href: ROUTES.PROFILE,    label: "Profile",  Icon: User            },
+  { href: ROUTES.DASHBOARD, label: "Home",     Icon: LayoutDashboard },
+  { href: ROUTES.SYNAPSE,   label: "Synapse",  Icon: Brain           },
+  { href: ROUTES.LEARNING,  label: "Courses",  Icon: Library         },
+  { href: ROUTES.PROGRESS,  label: "Progress", Icon: BarChart2       },
+  { href: ROUTES.PROFILE,   label: "Profile",  Icon: User            },
 ];
 
 export function MobileNav() {
