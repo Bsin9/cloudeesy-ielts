@@ -62,9 +62,20 @@ export const ROUTES = {
   SYNAPSE: "/synapse",
 
   // Other protected pages
-  MOCK_TEST: "/mock-test",
-  PROGRESS: "/progress",
-  PROFILE: "/profile",
+  MOCK_TEST:        "/mock-test",
+  PROGRESS:         "/progress",
+  PROFILE:          "/profile",
+  CERTIFICATIONS:   "/certifications",
+
+  // Admin portal
+  ADMIN: {
+    ROOT:        "/admin",
+    STUDENTS:    "/admin/students",
+    ADVANCED:    "/admin/advanced",
+    PERMISSIONS: "/admin/permissions",
+    AUDIT:       "/admin/audit",
+    SETTINGS:    "/admin/settings",
+  },
 
   // API
   API: {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Brain, FileText, BarChart2, User,
-  Zap, LogOut, Library,
+  Zap, LogOut, Library, Award,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { ROUTES } from "@/config/routes.js";
@@ -15,11 +15,12 @@ import { COURSE_REGISTRY_LIST, isEnrolledIn } from "@/config/courseRegistry.js";
  * They are accessible via the IELTS Dashboard section and Learning Hub.
  */
 const NAV_ITEMS = [
-  { href: ROUTES.DASHBOARD, label: "Dashboard", Icon: LayoutDashboard },
-  { href: ROUTES.SYNAPSE,   label: "Synapse",   Icon: Brain            },
-  { href: ROUTES.MOCK_TEST, label: "Mock Test", Icon: FileText         },
-  { href: ROUTES.PROGRESS,  label: "Progress",  Icon: BarChart2        },
-  { href: ROUTES.PROFILE,   label: "Profile",   Icon: User             },
+  { href: ROUTES.DASHBOARD,      label: "Dashboard",      Icon: LayoutDashboard },
+  { href: ROUTES.SYNAPSE,        label: "Synapse",        Icon: Brain            },
+  { href: ROUTES.MOCK_TEST,      label: "Mock Test",      Icon: FileText         },
+  { href: ROUTES.PROGRESS,       label: "Progress",       Icon: BarChart2        },
+  { href: ROUTES.CERTIFICATIONS, label: "Certifications", Icon: Award            },
+  { href: ROUTES.PROFILE,        label: "Profile",        Icon: User             },
 ];
 
 export function Sidebar({ enrolledCourses = [] }) {
